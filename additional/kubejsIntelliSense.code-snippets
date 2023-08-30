@@ -1,0 +1,98 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }, все права защищены, если скопируете сборку вас выебут в жопу 54 негра и мы подадим на вас в суд, накидаем страйков и что-нибудь еще, а потом кончим вам на лицо. Эта надпись встроена сюда, чтобы проверить, что сборка принадлежит нам. Вы можете конечно переименовать файл, удалить эту надпись, удалить этот файл. Но скрытый текст есть почти в каждом файле сборки :)
+	"Print main": {
+		"prefix": "main",
+		"body": "ServerEvents.recipes(event => {\n${1:}\n})",
+		"description": "Main"
+	},
+	"Remove func": {
+		"prefix": "remove",
+		"body": "event.remove({output: '${1:ItemID}'})",
+		"description": "Remove craft"
+	},
+	"Sequenced Assembly": {
+		"prefix": "sequenced_assembly",
+		"body": "event.recipes.create.sequenced_assembly(\n\t[\n\t\tItem.of('${1:output ItemID}').withChance(${2:Chances})\n\t],\n\t'${3:input ItemID}',\n\t[\n\t\tevent.recipes.create.pressing('${4:initial ItemID}', '${5:final ItemID}')\n\t])\n\t.transitionalItem('${6:ItemID}')\n\t.loops(${7:loops})",
+		"description": "Sequenced Assembly Craft"
+	},
+	"Mixing": {
+		"prefix": "mixing",
+		"body": "event.recipes.create.mixing(Item.of('${1:output ItemID}').withChance(${2:Chances}),['${3:Ingredients}'])//${4:}.heated() or .superheated()",
+		"description": "Mixing Craft"
+	},
+	"Shaped": {
+		"prefix": "shaped",
+		"body": "event.shaped('${1:output ItemID}',\n\t[\n\t\t'AAA',\n\t\t'AAA',\n\t\t'AAA'\n\t],\n\t{\n\t\tA: '${2:ItemID}',\n\t\t//B: 'Any ItemID',\n\t\t//C: 'Any ItemID',\n\t\t//...\n\t})",
+		"description": "Shaped Craft"
+	},
+	"Compacting": {
+		"prefix": "compacting",
+		"body": "event.recipes.create.compacting(\n\t[\n\t\t'${1:output ItemID}',\n\t\t//...\n\t],\n\t[\n\t\t'${2:input ItemID}',\n\t\t//...\n\t])//.heated() or .superheated()",
+		"description": "Comacting Craft"
+	},
+	"Crushing": {
+		"prefix": "crushing",
+		"body": "event.recipes.create.crushing(\n\t[\n\t\t'${1:output ItemID}',\n\t\t//...\n\t],\n\t'${2:input ItemID}')//.processingTime(time)",
+		"description": "Crushing Craft"
+	},
+	"Cutting": {
+		"prefix": "cutting",
+		"body": "event.recipes.create.cutting(\n\t[\n\t\t'${1:output ItemID}',\n\t\t//...\n\t],\n\t'${2:input ItemID}')//.processingTime(time)",
+		"description": "Cutting Craft"
+	},
+	"Deploying": {
+		"prefix": "deploying",
+		"body": "event.recipes.create.deploying(\n\t[\n\t\t'${1:output ItemID}',\n\t\t//...\n\t],\n\t[\n\t\t'${2:input ItemID}',\n\t\t//...\n\t])//.keepHeldItem()",
+		"description": "Deploying Craft"
+	},
+	"Emptying": {
+		"prefix": "emptying",
+		"body": "event.recipes.create.emptying(\n\t[\n\t\t'${1:output ItemID}',\n\t\t//...\n\t],\n\t'${2:input ItemID}')",
+		"description": "Emptying Craft"
+	},
+	"Filling": {
+		"prefix": "filling",
+		"body": "event.recipes.create.filling(\n\t'${1:output ItemID}',\n\t[\n\t\t'${2:input ItemID}',\n\t\t//...\n\t])",
+		"description": "Filling Craft"
+	},
+	"Haunting": {
+		"prefix": "haunting",
+		"body": "event.recipes.create.haunting(\n\t[\n\t\t'${1:output ItemID}',\n\t\t//...\n\t],\n\t'${2:input ItemID}')",
+		"description": "Haunting Craft"
+	},
+	"Mechanical Crafting": {
+		"prefix": "mechanical",
+		"body": "event.recipes.create.mechanical_crafting('${1:output ItemID}',\n\t[\n\t\t' AAA ',\n\t\t'A   A',\n\t\t'A   A',\n\t\t'A   A',\n\t\t' AAA '\n\t],\n\t{\n\t\tA: ${2: ItemID},\n\t\t//...\n\t})",
+		"description": "Mechanical Crafting"
+	},
+	"Milling": {
+		"prefix": "milling",
+		"body": "event.recipes.create.milling(\n\t[\n\t\t'${1:output ItemID}',\n\t\t//...\n\t],\n\t'${2:input ItemID}')",
+		"description": "Milling Craft"
+	},
+	"Pressing": {
+		"prefix": "pressing",
+		"body": "event.recipes.create.pressing(\n\t[\n\t\t'${1:output ItemID}',\n\t\t//...\n\t],\n\t'${2:input ItemID}')",
+		"description": "Pressing Craft"
+	},
+	"Sandpaper Polishing": {
+		"prefix": "sandpaper",
+		"body": "event.recipes.create.sandpaper_polishing('${1:output ItemID}', '${2:input ItemID}')",
+		"description": "Sandpaper Polishing"
+	}
+}

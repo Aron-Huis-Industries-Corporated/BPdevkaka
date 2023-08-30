@@ -1,0 +1,469 @@
+Гайд сделан Kimigur-ом
+
+Гайд чить слева на права, с верху вниз
+
+Дополнительную информацию можно найти на сайте: https://kubejs.com/
+
+Если тебе вдруг не хватило информации в гайде, то можно задать вопрос мне или в дискорде KubeJS (ссылка https://discord.com/invite/lat)
+
+Приветствую тебя в гайде для прожженных самоваров
+
+Для начал разберёмся с каталогами:
+
+Для тех кто вообще не понимает что тут происходит то каталог, означает папку в проводнике. Например, пряма сейчас ты в каталоге KubeJS и над этим гайдам ты уведешь следующие:
+
+assets — действует как пакет ресурсов, сюда можно поместить любые ресурсы клиента, такие как текстуры, модели и т. д.
+Пример: assets/kubejs/textures/item/test_item.png
+
+*data — Действует как пакет данных, вы можете поместить сюда любые ресурсы сервера, такие как таблицы добычи, функции и т. д.(неважно)
+Пример: data/kubejs/loot_tables/blocks/test_block.json
+
+startup_scripts — скрипты, которые загружаются один раз при запуске игры — используются для добавления предметов и других вещей, которые могут происходить только во время загрузки игры 
+(можно перезагрузить с помощью !!!!!!!(/kubejs reload_startup_scripts)!!!!!, но это может не сработать!)
+
+server_scripts — (если это читает Crippic21 то ты в этом катологе на долго)-(false) Этот котолог отвечает за скрипты, которые загружаются каждый раз при перезагрузке ресурсов сервера — используются для изменения рецептов, тегов, таблиц добычи и обработки событий сервера
+!!!!!!!(можно перезагружать с помощью /reload)!!!!!!!
+
+client_scripts — скрипты, которые загружаются каждый раз при перезагрузке клиентских ресурсов — используются для событий JEI, всплывающих подсказок и других вещей на стороне клиента
+(можно перезагружать с помощью F3+T)
+
+config — хранилище конфигурации KubeJS. Это также единственный каталог, к которому скрипты могут получить доступ, кроме мирового каталога.!!!!!
+
+exported — сюда попадают дампы данных, такие как атласы текстур(прогуглить)
+
+
+Так с основными каталогами разберались если что-то не понял перечитай и читай дальше.пошол в жопу
+
+
+
+Перечитал? Если всё ещё не понял, то в принципе не страшно просто запомни каталог server_scripts, кроме него врятли тебе что-то понадобится.СУКА ПОШОЛ НАХУ ЗАЧЕМ Я ЭТО ЧИТАЛ!!!!!!
+
+Так дальше придется взять клавиатуру ну тот прямаугольник с кнопками на столе.=)
+
+Сейчас я расскажу как добовлять и удолять крафты в верстаке.
+
+Для начала не спиши, прочти до фразы "Ну а теперь иди пробуй""нет"
+
+Для начала зайди в каталог server_scripts, там ты уведешь каталог mods, в этом каталоге лежат друге каталоги обозначающие моды в которых меняется крафты. На момент создания гайда в каталоге mods только каталог minecraft
+
+!!!!!ВАЖНО ДЛЯ КАЖДОВА МОДА СОЗДОВАТЬ СВОЙ КАТОЛОГ ИЛИ ЗАБРАКУЮ ВСЕ НЕ ПРАВЕЛЬНО РАСПОЛОЖЕНЫЕ КРАФТЫ(и мне всё равно на твоё мнение мой гайд будет по моему)!!!!! мне тож пофиг
+
+Так с каталогами для создания крафтов разберались далее заходим в нужный нам каталог и создоём или открываем (для самоваров) файл !!!С НАЗВАНИЕМ ПРеДМЕТА КРАФТЫ КОТОРОГО МЫ ХОТИМ ИЗМЕНИТЬ!!!
+
+После этого можно взять шаблон для строгово крафта: спасибо =)
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+    event.shaped(ItemId, [
+    '   ',
+    '   ',
+    '   '
+  ], {
+//    A: ItemA
+//   ,B: ItemB
+//   ,C: ItemC
+//   ,D: ItemD
+//   ,E: ItemE
+//   ,F: ItemF
+//   ,G: ItemG
+//   ,H: ItemH
+//   ,I: ItemI
+  })
+})
+
+Или безформенного:
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.shapeless(ItemId, [Items])
+})
+
+Так стоп сейчас ты скорее всего ничего не понял, дай минуту ща всё объясню.
+
+Начнём с 
+
+ServerEvents.recipes(event => {
+  // Рецепты
+})
+
+Это я пока не разобрался, но это что-то из Java script и без этого ничего работать не будет
+
+вобщем идём дальше сори :(
+
+А пока не забыл два слеша "//" это коментарии, всё что идёт после них компелятор не учитывает поэтому будь внемательнее  // этот предмет делает целое ничего
+
+Вместо ItemId нужно написать id придмета !!!КОТОРЫЙ МЫ ХОТМ ПОЛУЧИТЬ!!!
+
+Спросишь как его получить. 
+Это просто, зайди в игру и возми в руку придмет, затем впиши косанду в чат (чат открывается на кнопку "t")-(спасибо не знал) /kjs_hand
+Снова открываем чат и нажимаем мыщкой на зелёный текст, это и есть Id пердмета.
+Кстати если в крафте используются например доски то можно использовать жёлтую надпись ('#minecraft:planks')
+
+Дальше разберёмся с этим
+
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+есть несколько способов удолять крафты
+  
+  event.remove({mod: "Mod"}) // удаляет все рецепты мода, в данном случае - все ванильные крафты (ну нахер это писать)
+  event.remove({id: "RecipesId"}) // удаляет рецепт по айди РЕЦЕПТА (похуй)
+  event.remove({output: "ItemId"}) // удаляет все рецепты этого предмета, по его айди  
+
+Просто выберай нужный и используй
+
+далее разберёмся с крафтом
+
+  // добавление крафта ItemId
+    event.shaped(ItemId, [ // Вместо ItemId пишем id предмета если не знаеш как его получить то перечитай гайд с 3 строчки
+    '   ', // это сетка верстака 3X3
+    '   ', // сюда указывать буквы с предметми
+    '   '  // пробел это оцутствие блока
+  ], {
+//    A: ItemA   // в эти буквы указывать id предмета из которого он состоит
+//   ,B: ItemB  //  !!!СЛЕШИ "//" ПЕРЕД БУКВАЙ УБРАТЬ
+//   ,C: ItemC
+//	 ,D: ItemD
+//	 ,E: ItemE
+//	 ,F: ItemF
+//	 ,G: ItemG
+//	 ,H: ItemH
+//	 ,I: ItemI
+  })
+})
+
+Пример:
+Крафт зельеварки
+ServerEvents.recipes(event => {
+  // удаление крафта зельеварки
+  event.remove({output: 'minecraft:brewing_stand'})
+  // добавление крафта зельеварки
+    event.shaped('minecraft:brewing_stand', [
+    ' C ',
+    'ACA',
+    'BBB'
+  ], {
+     A: 'createdeco:cast_iron_ingot'
+    ,B: 'minecraft:smooth_stone_slab'
+    ,C: 'minecraft:blaze_rod'
+  }) 
+})
+
+
+
+Добавление безформенного кравта
+
+В ItemId Писать то что нужно скравтить
+В Items  через "," писать Id придметов 
+
+  // добавление крафта ItemId
+  event.shapeless(ItemId, [Items])
+
+Пример: event.shapeless('minecraft:sea_pickle', ['minecraft:kelp','minecraft:wither_rose']) //крафт морского огурцац
+
+Также приеры лежат по пути .../KubeJS/server_scripts/mods/minecraft/...
+
+
+Ну а теперь иди пробуй
+
+Ну а типерь Create
+
+Для начала разберёмся со свойствами кравтов.
+
+1) ItemId то что мы хотим получить
+2) Если мы хотим получить более 1 предмета то в id предмета пишем напимер '2x minecraft:diamond' вместо 2 пиши нужное число(кстати это "x" буква икс англиская)
+
+3)Если мы хотим получить предмет с определённым шансом то вместо ItemId пишем Item.of(ItemId).withChance(0.3)
+В примере шанс 30% но его менять можно на какой угодно.
+
+4)Если мы хотим получить 2 вида предмета, то вместо ItemId пишем [ItemId1, ItemId2, ItemId3, ...]
+Например:
+event.recipes.create.compacting(['diamond', Item.of('diamond').withChance(0.3)], 'coal_block')
+
+5)ItemN то из чего делается 
+Буква N озночает любую букву.
+
+Для itemN свойствено:
+
+6)Если мы хотим использовать более 1 предмета то в id предмета пишем напимер '2x minecraft:diamond' вместо 2 пиши нужное число(кстати это "x" буква икс англиская)
+
+7)Если мы хотим использовать 2 вида предмета, то вместо ItemId пишем [ItemA, ItemB, ItemC, ...]
+Например:
+event.recipes.create.compacting('diamond', ['2x coal_block', 'coal'])
+
+8)Чтобы зделать крафт с нагревом !!!ЧАШИ!!! нужно добавить (.heated()) для нагрев или (.superheated()) для перегрева
+примеры:
+  event.recipes.create.compacting(ItemId, ItemA).heated()  // Нагретый  
+  event.recipes.create.compacting(ItemId, ItemA).superheated() // Перегретый
+
+9)Также в крафт можно добавить жидкости
+Вместо ItemId или ItemN пишем Fluid.of(FluidId, 10)
+В примере 10 значит количество в мили бакитах (mb) в 1 ведре(b) = 1000 mb
+
+FluidId-это Id житкасти
+
+10) Можно добавить .processingTime(time) 
+time это время в Милисекундах за которые будет зделан крафт на скорости 256
+например:
+  event.recipes.create.crushing('7x diamond', 'coal_block').processingTime(500)
+
+11)Можно добавить .keepHeldItem()
+Придмет ItemB !!!НЕ БУДЕТ ТРАТИТСЯ!!!
+например:
+  event.recipes.create.deploying(['13x diamond', 'emerald'], ['coal_block', 'sand']).keepHeldItem()
+
+
+А вот шаблон пресса с чашей
+Для него свойственно 1 2 3 4 5 6 7 8 9
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.compacting(ItemId, ItemA)
+})
+
+Это шаблон колес дробления
+Для него свойственно 1 2 3 4 5 10
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.crushing(ItemId, ItemA)
+})
+
+Это шаблон механической пилы
+Для него свойственно 1 2 3 4 5 10
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.cutting(ItemId, ItemA)
+})
+
+
+Это шаблон авто руки и депо
+Для него свойственно 1 2 3 4 5 11
+
+ItemA Лежит на депо 
+ItemB Держит рука
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.deploying(ItemId, [ItemA, ItemB])
+})
+
+  
+Это шаблон осушителя предметов
+Для него свойственно 1 2 3 4 5 9
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.emptying([Fluid.of(FluidId, mb), ItemId], ItemA)
+})
+
+
+Это шаблон Призрочного наполнения (Вентиляторв с огнём душ)
+Для него свойственно 1 2 3 4 5 
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.haunting(ItemId, ItemA)
+})
+
+
+Это шаблон Массовая промывка (Вентиляторв с водой)
+Для него свойственно 1 2 3 4 5 
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.splashing(ItemId, ItemA)
+})
+
+
+Шаблон мефанического сборщика
+Для него свойственно 1 2
+поле пожно увеличивать без ограничений
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.mechanicalCrafting(ItemId, [
+    '     ',
+    '     ',
+    '     ',
+    '     ',
+    '     '
+  ], {
+//    A: ItemA
+//   ,B: ItemB
+//   ,C: ItemC
+//   ,D: ItemD
+//   ,E: ItemE
+//   ,F: ItemF
+//   ,G: ItemG
+//   ,H: ItemH
+//   ,I: ItemI
+  })
+})
+
+
+Это шаблон для жернов
+Для него свойственно 1 2 3 4 5 10
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.milling(ItemId, ItemA)
+})
+
+
+Это шаблон для Миксера
+Для него свойственно 1 2 3 4 5 6 7 8 9 
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.mixing(ItemId, ItemA)
+})
+
+Это шаблон пресса
+Для него свойственно 1 2 3 4 5 6 7
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.pressing(ItemId, ItemA)
+})
+
+Это шаблон наждачки
+Для него свойственно 1 2 3 4 5
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.sandpaperPolishing(ItemId, ItemA)
+})
+
+Шаблон Дозатора
+Для него свойственно 1 2 3 4 5 9
+
+ServerEvents.recipes(event => {
+  // удаление крафта всех кравтов ItemId
+  event.remove({output: ItemId})
+  
+  // добавление крафта ItemId
+  event.recipes.create.filling(ItemId, [Fluid.of(FluidId, 10), ItemA])
+})
+
+
+Ну а теперь самый сложный и страшный из возможных типов крафта Create Последовательный сбор(можно уже боятся):
+
+Для него свойственно 1 2 3 4 5 9
+
+ServerEvents.recipes(event => {
+    // удаление крафта всех кравтов ItemId
+    event.remove({output: ItemId})
+
+    // добавление крафта ItemId
+    let inter = ItemR
+    event.recipes.create.sequenced_assembly(
+        ItemId
+    , itemIn, [
+//        ,event.recipes.create.pressing(inter, inter) // Шаблон пресса
+//        ,event.recipes.create.deploying(inter, [inter, itemA]) //Шаблон руки
+//        ,event.recipes.create.filling(inter, [inter, Fluid.of('FluidId', 10)]) //Шаблон дозатара
+//        ,event.recipes.create.cutting(inter, inter) // Шаблон пилы
+    ]).transitionalItem(inter).loops(2)
+})
+
+Вместо ItemR пишем промежуточный предмет
+
+Вместо ItemIn пишем предмет который будет на входе.
+
+
+
+Последовательный сбор поддержывает 4 возможных крафта: мех.руку, дозатор, пила и пресс.
+
+Их можно повторять сколько угодно раз нужно только от коментировать шаблон и если нужно размножить.
+
+!!!ВАЖНО ПЕРЕД ПЕРВЫМ ШАБЛОНОМ ЗАПЯТУЮ "," УБРАТЬ!!!
+
+ServerEvents.recipes(event => {
+    // удаление крафта всех кравтов ItemId
+//    let ItemId = itemid
+//    let ItemA = itema
+//    let ItemB = itemb
+//    let ItemC = itemc
+//    let ItemD = itemd
+//    let ItemE = iteme
+//    let ItemF = itemf
+//    let ItemG = itemg
+//    let ItemH = itemh
+//    let ItemI = itemi
+    event.remove({output: ItemId})
+
+    // добавление крафта ItemId
+    let inter = ItemR
+    event.recipes.create.sequenced_assembly(
+        ItemId
+    , ItemIn, [
+//        ,event.recipes.create.pressing(inter, inter) // Шаблон пресса
+//        ,event.recipes.create.deploying(inter, [inter, ItemA]) //Шаблон руки
+//        ,event.recipes.create.filling(inter, [inter, Fluid.of('FluidId', 10)]) //Шаблон дозатара
+//        ,event.recipes.create.cutting(inter, inter) // Шаблон пилы
+    ]).transitionalItem(inter).loops(2)  
+event.recipes.create.mechanicalCrafting(ItemId, [
+    '     ',
+    '     ',
+    '     ',
+    '     ',
+    '     '
+  ], {
+//    A: ItemA
+//   ,B: ItemB
+//   ,C: ItemC
+//   ,D: ItemD
+//   ,E: ItemE
+//   ,F: ItemF
+//   ,G: ItemG
+//   ,H: ItemH
+//   ,I: ItemI
+  })
+})
+
+
+
