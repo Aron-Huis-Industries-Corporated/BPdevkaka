@@ -1,0 +1,3 @@
+identifier = menu.settings
+title = menu settings
+allowesc = true

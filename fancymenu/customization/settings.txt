@@ -1,0 +1,29 @@
+type = menu
+
+customization-meta {
+  identifier = net.minecraft.client.gui.screens.OptionsScreen
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  keepaspectratio = false
+  action = backgroundoptions
+}
+
+customization {
+  orientation = top-left
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  buttonaction = opengui;menu.settings%btnaction_splitter_fm%
+  x = 165
+  width = 150
+  action = addbutton
+  actionid = 9575fed1-6e15-4f72-b444-523eb315a6b21694852739043
+  y = 198
+  label = Настройки главного меню
+  height = 20
+}
+

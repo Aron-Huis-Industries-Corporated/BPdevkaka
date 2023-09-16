@@ -22,19 +22,6 @@ customization {
 }
 
 customization {
-  identifier = %id=376322%
-  orientation = mid-left
-  x = 10
-  action = movebutton
-  y = 27
-}
-
-customization {
-  identifier = %id=button_compatibility_id:mc_titlescreen_realms_button%
-  action = hidebutton
-}
-
-customization {
   identifier = %id=button_compatibility_id:mc_titlescreen_accessibility_button%
   orientation = mid-left
   x = 82
@@ -43,25 +30,33 @@ customization {
 }
 
 customization {
-  identifier = %id=button_compatibility_id:forge_titlescreen_mods_button%
+  identifier = %id=376322%
   orientation = mid-left
   x = 10
   action = movebutton
-  y = 3
+  y = 27
 }
 
 customization {
-  identifier = %id=376346%
+  identifier = %id=button_compatibility_id:mc_titlescreen_options_button%
   orientation = mid-left
-  x = 34
+  x = 112
   action = movebutton
-  y = 27
+  y = 3
 }
 
 customization {
   identifier = %id=button_compatibility_id:mc_titlescreen_quit_button%
   orientation = mid-left
   x = 112
+  action = movebutton
+  y = 27
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_language_button%
+  orientation = mid-left
+  x = 58
   action = movebutton
   y = 27
 }
@@ -75,24 +70,29 @@ customization {
 }
 
 customization {
-  identifier = %id=button_compatibility_id:mc_titlescreen_options_button%
+  identifier = %id=button_compatibility_id:forge_titlescreen_mods_button%
   orientation = mid-left
-  x = 112
+  x = 10
   action = movebutton
   y = 3
 }
 
 customization {
-  identifier = %id=button_compatibility_id:mc_titlescreen_language_button%
+  identifier = %id=button_compatibility_id:mc_titlescreen_realms_button%
+  action = hidebutton
+}
+
+customization {
+  identifier = %id=376346%
   orientation = mid-left
-  x = 58
+  x = 34
   action = movebutton
   y = 27
 }
 
 customization {
   orientation = top-left
-  hidden = false
+  hidden = true
   x = 110
   width = 421
   action = deep_customization_element:title_screen_forge_top
@@ -103,7 +103,7 @@ customization {
 
 customization {
   orientation = top-left
-  hidden = false
+  hidden = true
   x = 2
   width = 108
   action = deep_customization_element:title_screen_branding
@@ -114,7 +114,7 @@ customization {
 
 customization {
   orientation = top-left
-  hidden = false
+  hidden = true
   x = 327
   width = 312
   action = deep_customization_element:title_screen_forge_copyright
@@ -149,12 +149,12 @@ customization {
   orientation = mid-left
   splash_color = #ffff00
   hidden = false
-  x = 270
+  x = 274
   width = 60
-  splash_rotation = -20
+  splash_rotation = 20
   action = deep_customization_element:title_screen_splash
   actionid = 7e3b2128-5a9e-4ff2-b6c1-defc17ea92731694782872286
-  y = -50
+  y = -94
   height = 30
 }
 
@@ -163,8 +163,8 @@ customization {
   loopbackgroundanimations = true
   restartbackgroundanimations = true
   buttonaction = joinserver;expample.com%btnaction_splitter_fm%
-  x = 60
-  width = 100
+  x = 10
+  width = 98
   action = addbutton
   actionid = 5b6fa211-a014-4f1d-81f9-d2a50bce0c801694783970282
   y = 232
@@ -181,5 +181,19 @@ customization {
   actionid = 874a77c0-adbd-428f-92c9-7c0bff2180b81694784463399
   y = 85
   height = 40
+}
+
+customization {
+  orientation = top-left
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  buttonaction = openlink;https://dancing-hamster-036907.netlify.app%btnaction_splitter_fm%
+  x = 112
+  width = 98
+  action = addbutton
+  actionid = a0630772-9ff5-42d5-ba9a-1263c2420d191694851614663
+  y = 232
+  label = Наш сайт
+  height = 20
 }
 

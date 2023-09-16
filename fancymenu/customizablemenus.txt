@@ -1,8 +1,5 @@
 type = customizablemenus
 
-net.minecraft.client.gui.screens.TitleScreen {
-}
-
 gg.essential.vigilance.gui.SettingsGui {
 }
 
@@ -16,5 +13,14 @@ net.minecraft.client.gui.screens.OnlineOptionsScreen {
 }
 
 me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI {
+}
+
+net.minecraft.client.gui.screens.WinScreen {
+}
+
+net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen {
+}
+
+net.minecraft.client.gui.screens.TitleScreen {
 }
 

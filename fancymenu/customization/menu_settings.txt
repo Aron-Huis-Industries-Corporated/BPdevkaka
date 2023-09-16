@@ -1,0 +1,72 @@
+type = menu
+
+customization-meta {
+  identifier = menu.settings
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  custom_menu_title = Настройки главного меню
+  randomonlyfirsttime = false
+}
+
+customization {
+  keepaspectratio = false
+  action = backgroundoptions
+}
+
+customization {
+  orientation = top-centered
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  buttonaction = enable_layout;classic%btnaction_splitter_fm%disable_layout;right%btnaction_splitter_fm%disable_layout;left%btnaction_splitter_fm%
+  x = -50
+  width = 100
+  action = addbutton
+  actionid = e772e9c8-9821-4ceb-ac54-6155f0f813cd1694853594966
+  y = 70
+  label = Classic
+  height = 20
+}
+
+customization {
+  orientation = top-left
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  buttonaction = closegui;net.minecraft.client.gui.screens.OptionsScreen:400334%btnaction_splitter_fm%opengui;net.minecraft.client.gui.screens.OptionsScreen%btnaction_splitter_fm%
+  x = 270
+  width = 100
+  action = addbutton
+  actionid = c0a17cdc-e8e7-43f3-b427-7f03ce34bbe81694855343465
+  y = 200
+  label = Готово
+  height = 20
+}
+
+customization {
+  orientation = top-left
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  buttonaction = enable_layout;left%btnaction_splitter_fm%disable_layout;right%btnaction_splitter_fm%disable_layout;classic%btnaction_splitter_fm%
+  x = 270
+  width = 100
+  action = addbutton
+  actionid = 7509af49-8835-4ac7-a8e5-e23a6b768c0e1694855677936
+  y = 93
+  label = Left
+  height = 20
+}
+
+customization {
+  orientation = top-left
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  buttonaction = enable_layout;right%btnaction_splitter_fm%disable_layout;left%btnaction_splitter_fm%disable_layout;classic%btnaction_splitter_fm%
+  x = 270
+  width = 100
+  action = addbutton
+  actionid = e706bce2-5db9-4030-926f-fa2b04992d941694855806785
+  y = 116
+  label = Right
+  height = 20
+}
+
