@@ -11,7 +11,7 @@ ServerEvents.recipes(event => {
   ], {
     A: 'minecraft:string'
    ,B: 'minecraft:leather'
-   ,C: Item.of('sophisticatedstorage:iron_barrel')
+   ,C: 'create:item_vault'
 //   ,D: ItemD
 //   ,E: ItemE
 //   ,F: ItemF

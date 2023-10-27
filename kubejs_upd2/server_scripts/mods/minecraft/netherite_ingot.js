@@ -4,7 +4,7 @@ ServerEvents.recipes(event => {
   
   // добавление крафта ItemId
   event.shapeless('minecraft:netherite_ingot', ['minecraft:netherite_scrap','minecraft:netherite_scrap','minecraft:netherite_scrap','minecraft:netherite_scrap','minecraft:gold_ingot','minecraft:gold_ingot',
-'minecraft:gold_ingot','minecraft:gold_ingot','extendedcrafting:black_iron_ingot'])
+'minecraft:gold_ingot','minecraft:gold_ingot','kubejs:black_iron_ingot'])
 })
 
 
