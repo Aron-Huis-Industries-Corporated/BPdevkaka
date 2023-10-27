@@ -1,17 +1,16 @@
-//'createbasin'
 ServerEvents.recipes(event => {
   // удаление крафта всех кравтов ItemId
-  event.remove({output: 'create:basin'})
+  event.remove({output:'kubejs:black_iron_ingot'})
   
   // добавление крафта ItemId
-    event.shaped('create:basin', [
-    'A A',
-    'ACA',
-    'BBB'
+    event.shaped('kubejs:black_iron_ingot' , [
+    'AAA',
+    'ABA',
+    'AAA'
   ], {
-    A: 'create:andesite_alloy'
-   ,B: 'create:iron_sheet'
-   ,C: 'kubejs:black_iron_slate'
+    A: 'minecraft:iron_ingot'
+   ,B: 'minecraft:obsidian'
+//   ,C: ItemC
 //   ,D: ItemD
 //   ,E: ItemE
 //   ,F: ItemF

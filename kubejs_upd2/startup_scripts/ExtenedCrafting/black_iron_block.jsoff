@@ -1,6 +1,0 @@
-StartupEvents.registry('block', event => {
-    event.create('black_iron_block', 'basic')
-        .texture('kubejs:block/black_iron_block')
-        .displayName('Блок чёрного железа')
-        .material('iron')
-})

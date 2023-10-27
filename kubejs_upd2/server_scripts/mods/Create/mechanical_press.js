@@ -12,7 +12,7 @@ ServerEvents.recipes(event => {
    ,B: 'create:cogwheel'
    ,C: 'minecraft:iron_block'
    ,D: 'create:andesite_casing'
-   ,E: 'extendedcrafting:black_iron_slate'
+   ,E: 'kubejs:black_iron_slate'
 //   ,F: ItemF
 //   ,G: ItemG
 //   ,H: ItemH

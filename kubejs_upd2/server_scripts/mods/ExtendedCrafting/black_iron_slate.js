@@ -1,21 +1,8 @@
 ServerEvents.recipes(event => {
-  // удаление крафта всех кравтов ItemId
-  event.remove({output: 'kubejs:black_iron_slate'})
-  
-  // добавление крафта ItemId
-    event.shaped('kubejs:black_iron_slate', [
-    'AAA',
-    'ABA',
-    'AAA'
-  ], {
-    A: 'minecraft:iron_ingot'
-   ,B: 'minecraft:obsidian'
-//   ,C: ItemC
-//   ,D: ItemD
-//   ,E: ItemE
-//   ,F: ItemF
-//   ,G: ItemG
-//   ,H: ItemH
-//   ,I: ItemI
-  })
-})
+  event.shapeless(
+    Item.of('2x kubejs:black_iron_slate'), // arg 1: output
+    [ 
+      'kubejs:black_iron_ingot',
+      '#immersiveengineering:tools/hammers',
+    ]
+  )})

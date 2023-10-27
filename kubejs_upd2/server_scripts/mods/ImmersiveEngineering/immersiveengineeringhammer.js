@@ -8,7 +8,7 @@ ServerEvents.recipes(event => {
     ' BA',
     'B  '
   ], {
-    A: 'create:brass_sheet'
+    A: 'minecraft:iron_ingot'
    ,B: 'minecraft:stick'
    ,C: 'minecraft:string'
 //   ,D: ItemD
